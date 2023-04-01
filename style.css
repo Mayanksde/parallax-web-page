@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.wrapper{
+    height: 100vh;
+    /* our image is scrolling on X axis so to avoid this use overflowX:hidden   */
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 10px;
+}
+.container{
+    position: relative;
+    height: 100%;
+    display: flex;
+    /* for doing in center */
+    justify-content: center;
+    align-items: center;
+    /* for preserv 3d property otherwise things wil happens in 2d */
+ 
+    transform-style: preserve-3d;
+    z-index: -1;
+}
+.background{
+    /* for doing background image far from us */
+    transform: translateZ(-40px) scale(5);
+    /* for increase the size of background image */
+    
+}
+.foreground{
+    /* for doing background image far from us */
+    transform: translateZ(-20px) scale(3);
+    /* for increase the size of background image */
+
+}
+.background , .foreground{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1; /* for decide which should be on up and which should be on back */
+   
+}
+h1{
+    color: white;
+    position: absolute;
+    top: 4rem;
+    font-size: 5rem;
+    text-shadow: 3px 3px rgb(97, 96, 96);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.secHeading{
+    color: white;
+    font-size: 4rem;
+    padding: 0 10rem;
+
+}
+.text{
+    font-size: 1.2rem;
+    padding: 0 10rem;
+    margin: 5rem 0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.bg{
+    position: relative;
+    width: 100%;
+    background-attachment: fixed;
+    height: 400px;
+    background-position: center; /* so that every image clearly visible */
+    background-size: cover;
+}
+.desc{
+    /* absolute position : because we want to overlap text on image  */
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    padding: 0.5rem 2.5rem;
+    top: 50%;
+    left: 50%; 
+    transform: translateX(-50%) translateY(-50%);
+    color: black;
+    font-size: 2rem;
+
+}
+section{
+    background-color: rgb(41, 40, 40);
+    color: white;
+    padding: 5rem 0;
+}
+.bg1{
+    background-image: url(sport-1.jpg);
+}
+.bg2{
+    background-image: url(sport-2.jpg);
+}
+.bg3{
+    background-image: url(sport-3.jpg);
+}
